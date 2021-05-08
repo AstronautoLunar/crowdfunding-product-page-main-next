@@ -1,9 +1,28 @@
+import { LinkHeader } from '../UI';
+
 import styles from './styles.module.scss';
 
 export default function Header() {
+    const linksString = [
+        { name: 'About', id: 0 },
+        { name: 'Discover', id: 1 },
+        { name: 'Get Started', id: 2 },
+    ];
+    
     return (
         <header id={styles.header} role="header">
-            <h1>Olá mundo</h1>
+            <span id={styles.logo}>crowdfund</span>
+            <div id={styles.links}>
+                {
+                    linksString.map(item => {
+                        return (
+                            <LinkHeader key={item.id}>
+                                {item.name}
+                            </LinkHeader>
+                        )
+                    })
+                }
+            </div>
         </header>
     );
 }
