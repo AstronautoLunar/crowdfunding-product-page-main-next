@@ -1,0 +1,34 @@
+button.buttonIcon {
+    border-radius: 30px;
+    border: none;
+
+    justify-content: space-between;
+    
+    outline: none;
+    box-shadow: none;
+
+    div.areaTextButtonIcon {
+        padding-left: 15px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-right: 20px;
+        
+        span.textButtonIcon {
+            font-weight: 700;
+
+            span.noChecked {
+                color: var(--neutral-dark-gray);
+            }
+
+            span.checked {
+                color: var(--primary-moderate-cyan);
+            }
+        }
+    }
+}
+
+
+button.buttonIcon, div.areaTextButtonIcon {
+    display: flex;
+    align-items: center;
+}
