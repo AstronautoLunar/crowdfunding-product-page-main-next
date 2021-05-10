@@ -1,0 +1,22 @@
+div.dataComponent {
+    margin-right: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    h1 {
+        font-size: 30px;
+    }
+
+    span {
+        font-size: 15px;
+
+        color: var(--neutral-dark-gray);
+    }
+
+    h1, span {
+        margin: 5px 0;
+    }
+}

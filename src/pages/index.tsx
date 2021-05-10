@@ -7,7 +7,8 @@ import {
   Text,
   SubContainer,
   Button,
-  ButtonIcon
+  ButtonIcon,
+  DataContainer
 } from "../components/UI";
 
 import styles from "../styles/home.module.scss";
@@ -49,6 +50,9 @@ export default function Home() {
               Bookmark
             </ButtonIcon>
           </SubContainer>
+        </Panel>
+        <Panel>
+          <DataContainer/>
         </Panel>
       </Container>
     </main>

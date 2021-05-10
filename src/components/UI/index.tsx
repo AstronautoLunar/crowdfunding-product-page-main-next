@@ -7,5 +7,17 @@ import Text from './Text';
 import SubContainer from './SubContainer';
 import Button from './Button';
 import ButtonIcon from './ButtonIcon';
+import DataContainer from './DataContainer';
 
-export { BackgroundImage, LinkHeader, Panel, IconLogo, LevelOneTitle, Text, SubContainer, Button, ButtonIcon };
+export { 
+    BackgroundImage, 
+    LinkHeader, 
+    Panel, 
+    IconLogo, 
+    LevelOneTitle, 
+    Text, 
+    SubContainer, 
+    Button, 
+    ButtonIcon,
+    DataContainer
+};

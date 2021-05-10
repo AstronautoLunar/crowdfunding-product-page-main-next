@@ -1,0 +1,32 @@
+div#dataContainer {
+    flex-direction: column;
+
+    div#areaData {
+        align-items: center;
+        justify-content: flex-start;
+
+        margin-bottom: 30px;
+    }
+
+    div#barData {
+        width: 100%;
+        height: 15px;
+
+        border-radius: 40px;
+        
+        background-color: hsl(0, 0%, 95%);
+        
+        div#loadingBar {
+            width: 76.000%;
+            height: 15px;
+            
+            border-radius: 40px;
+
+            background-color: var(--primary-moderate-cyan);
+        }
+    }
+}
+
+div#dataContainer, div#areaData, div.data {
+    display: flex;
+}
