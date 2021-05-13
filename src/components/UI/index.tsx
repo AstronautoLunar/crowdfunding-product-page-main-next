@@ -8,6 +8,11 @@ import SubContainer from './SubContainer';
 import Button from './Button';
 import ButtonIcon from './ButtonIcon';
 import DataContainer from './DataContainer';
+import Title from './Title';
+import SubPanel from './SubPanel';
+import SectionBenefit from './SectionBenefit';
+import TextColor from './TextColor';
+import Counter from './Counter';
 
 export { 
     BackgroundImage, 
@@ -19,5 +24,10 @@ export {
     SubContainer, 
     Button, 
     ButtonIcon,
-    DataContainer
+    DataContainer,
+    Title,
+    SubPanel,
+    SectionBenefit,
+    TextColor,
+    Counter,
 };

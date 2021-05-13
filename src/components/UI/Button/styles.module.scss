@@ -1,28 +1,34 @@
-button.button {
+button.buttonOn, button.buttonOff {
     padding: 20px 40px;
 
     cursor: pointer;
-
-    background-color: var(--primary-moderate-cyan);
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     border: none;
-
+    
     outline: none;
     box-shadow: none;
-
+    
     border-radius: 30px;
-
+    
     span.buttonText {
         color: white;
-
+        
         font-weight: 700;
     }
 }
 
 button.button:hover {
     background-color: var(--primary-dark-cyan);
+}
+
+button.buttonOn {
+    background-color: var(--primary-moderate-cyan);
+}
+
+button.buttonOff {
+    background-color: var(--neutral-dark-gray);
 }

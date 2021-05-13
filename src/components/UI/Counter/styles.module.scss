@@ -1,0 +1,20 @@
+div.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    span.StrongTextCounter {
+        font-size: 30px;
+        font-weight: 700;
+
+        color: #000000;
+    }
+
+    span.textCounter {
+        margin-left: 5px;
+
+        font-size: 15px;
+
+        color: var(--neutral-dark-gray);
+    }
+}
