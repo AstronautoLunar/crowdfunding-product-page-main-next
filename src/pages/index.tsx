@@ -1,4 +1,9 @@
-import { Header, Container } from "../components";
+import { 
+  Header, 
+  Container,
+  Window,
+} from "../components";
+
 import {
   BackgroundImage,
   Panel,
@@ -13,7 +18,7 @@ import {
   SectionBenefit,
 } from "../components/UI";
 
-import styles from "../styles/home.module.scss";
+import styles from "../styles/Home.module.scss";
 
 export default function Home() {
   return (
@@ -80,7 +85,7 @@ export default function Home() {
             title="Bamdoo stand"
             counter="101"
             action={true}
-          >
+            >
             You get an ergonomic stand made of natural bambo. You've helped us launch our promotional campaign, and  you'll be added to a special Backer member list.
           </SectionBenefit>
           <SectionBenefit
@@ -96,11 +101,14 @@ export default function Home() {
             title="Mahogany Special Edition"
             counter="0"
             action={false}
-          >
+            >
             You get two Special Edition Mahogany stands, a Backer T-Shirt a personal thank you. You'll be added to our Backer member list, Shipping is included.
           </SectionBenefit>
         </Panel>
       </Container>
+      <Window>
+        <h1>Olá mundo</h1>
+      </Window>
     </main>
   );
 }

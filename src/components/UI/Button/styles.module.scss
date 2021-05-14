@@ -21,7 +21,7 @@ button.buttonOn, button.buttonOff {
     }
 }
 
-button.button:hover {
+button.buttonOn:hover {
     background-color: var(--primary-dark-cyan);
 }
 
@@ -31,4 +31,6 @@ button.buttonOn {
 
 button.buttonOff {
     background-color: var(--neutral-dark-gray);
+
+    cursor: default;
 }
