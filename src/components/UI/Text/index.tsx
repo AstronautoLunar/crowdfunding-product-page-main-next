@@ -3,17 +3,18 @@ import styles from './styles.module.scss';
 type TextData = {
     children: any;
     textAlign: any;
-    marginTopAndBottom: number;
+    marginTop: number;
+    marginBottom: number;
 }
 
-export default function Text({ children, textAlign, marginTopAndBottom }: TextData) {
+export default function Text({ children, textAlign, marginTop, marginBottom }: TextData) {
     return (
         <p
             className={styles.text}
             style={{ 
                 textAlign,
-                marginTop: marginTopAndBottom,
-                marginBottom: marginTopAndBottom, 
+                marginTop,
+                marginBottom, 
             }}
         >{ children }</p>
     );

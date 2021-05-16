@@ -1,6 +1,6 @@
 import styles from './styles.module.scss';
 
-export default function SubPanel({ children, action }) {
+export default function SubPanel({ children, action, marginTop, marginBottom }) {
     let styleOpacity = 1;
     if(action === true) {
         styleOpacity = 1;
@@ -10,7 +10,11 @@ export default function SubPanel({ children, action }) {
     return (
         <div 
             className={styles.subPanel}
-            style={{ opacity: styleOpacity }}
+            style={{ 
+                opacity: styleOpacity,
+                marginTop,
+                marginBottom,
+            }}
         >
             { children }
         </div>

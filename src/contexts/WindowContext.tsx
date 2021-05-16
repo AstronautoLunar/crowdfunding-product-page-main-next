@@ -4,12 +4,13 @@ import {
     useContext,
 } from 'react';
 
-const WindowContext = createContext({});
-
 type WindowContextData = {
     button: boolean;
     toggleButton: () => void;
+    stayWindow: () => void;
 }
+
+const WindowContext = createContext({} as WindowContextData);
 
 export function WindowProvider({ children }) {
     let [ button, setButton ] = useState(false);
@@ -18,8 +19,12 @@ export function WindowProvider({ children }) {
         setButton(button = !button);
     }
     
+    function stayWindow() {
+        setButton(button = true);
+    }
+
     return (
-        <WindowContext.Provider value={{ button, toggleButton } as WindowContextData}>
+        <WindowContext.Provider value={{ button, toggleButton, stayWindow }}>
             { children }
         </WindowContext.Provider>
     );

@@ -13,6 +13,7 @@ import SubPanel from './SubPanel';
 import SectionBenefit from './SectionBenefit';
 import TextColor from './TextColor';
 import Counter from './Counter';
+import CheckBox from './CheckBox';
 
 export { 
     BackgroundImage, 
@@ -30,4 +31,5 @@ export {
     SectionBenefit,
     TextColor,
     Counter,
+    CheckBox,
 };

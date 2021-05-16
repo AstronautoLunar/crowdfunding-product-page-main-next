@@ -17,7 +17,11 @@ type SectionBenefitData = {
 
 export default function SectionBenefit({ children, title, value, counter, action }: SectionBenefitData) {
     return (
-        <SubPanel action={action}>
+        <SubPanel         
+            action={action}
+            marginTop={20}
+            marginBottom={20}
+        >
             <section 
                 className={styles.sectionBenefit}
                 role="section"
@@ -30,6 +34,7 @@ export default function SectionBenefit({ children, title, value, counter, action
                         className={styles.containerSection}
                     >
                         <Title
+                            align="left"
                             marginTop={0}
                             marginBottom={0}
                             type="h4"
@@ -42,7 +47,8 @@ export default function SectionBenefit({ children, title, value, counter, action
                     </div>
                     <Text
                         textAlign="justify"
-                        marginTopAndBottom={20}
+                        marginTop={20}
+                        marginBottom={20}
                     >
                         { children }
                     </Text>
@@ -50,7 +56,11 @@ export default function SectionBenefit({ children, title, value, counter, action
                         className={styles.containerSection}
                     >
                         <Counter>{ counter }</Counter>
-                        <Button action={action}>Select Reword</Button>
+                        <Button 
+                            click={() => {}}    
+                            action={action}>
+                                Select Reword
+                        </Button>
                     </div>
                 </article>
             </section>

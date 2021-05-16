@@ -1,0 +1,82 @@
+div.checkBox {
+    justify-content: center;
+    align-items: flex-start;
+
+    cursor: pointer;
+    
+    div.buttonCheck {
+        width: 25px;
+        height: 25px;
+
+        border-radius: 25px;
+        border: 1px solid var(--primary-moderate-cyan);
+
+        background-color: #ffffff;
+
+        margin-right: 30px;
+    }
+
+    article.articleCheckBox {
+        h4.titleCheckBox {
+            font-size: 15px;
+        }
+
+        h4.titleCheckBox:hover {
+            color: var(--primary-moderate-cyan);
+        }
+    }
+
+    article.articlePurchase {
+        
+        div.titles {
+            font-size: 15px;
+
+            height: 25px;
+
+            align-items: center;
+            
+            h4.titleCheckBox:hover {
+                color: var(--primary-moderate-cyan);
+            }
+
+            h4.price {
+                margin-left: 20px;
+                
+                color: var(--primary-moderate-cyan);
+            }
+
+            position: relative;
+
+            div.counter {
+                justify-content: center;
+                align-items: center;
+
+                position: absolute;
+                right: 0;
+
+                span.stronger {
+                    color: #000000;
+
+                    font-size: 20px;
+                    font-weight: 700;
+
+                    margin-right: 5px;
+                }
+
+                span.weak {
+                    color: var(--neutral-dark-gray);
+                
+                }
+            }
+        }
+    }
+
+    article.articleCheckBox, article.articlePurchase {
+        flex-direction: column;
+        width: 86%;
+    }
+}
+
+article.articleCheckBox, div.checkBox, article.articlePurchase, div.titles, div.counter {
+    display: flex;
+}

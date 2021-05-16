@@ -5,24 +5,32 @@ div#brightness {
     background-color: rgba(0, 0, 0, 0.5);
     
     position: absolute;
+
+    align-items: center;
+
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+}
+
+div#window {
+    padding: 30px;
+
+    width: 650px;
     
-    div#window {
-        padding: 20px;
+    flex-direction: column;
     
-        flex-direction: column;
+    background-color: #ffffff;
     
-        background-color: #ffffff;
-    
-        border-radius: 10px;
-    
-    }
+    border-radius: 10px;
+
+    position: absolute;
+    top: 500px;
+
+    align-items: left;
 }
 
 div#brightness, div#window {
     display: flex;
     justify-content: center;
-    align-items: center;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
