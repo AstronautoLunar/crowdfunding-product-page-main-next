@@ -47,6 +47,12 @@ export default function Home() {
           </Text>
           <SubContainer>
             <Button
+              padding={{
+                left: 40,
+                right: 40,
+                top: 20,
+                bottom: 20,
+              }}
               action={true}
               click={toggleButton}
             >

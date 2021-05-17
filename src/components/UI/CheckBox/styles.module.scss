@@ -14,6 +14,21 @@ div.checkBox {
         background-color: #ffffff;
 
         margin-right: 30px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        div.selected {
+            width: 15px;
+            height: 15px;
+
+            background-color: var(--primary-moderate-cyan);
+
+            border-radius: 20px;
+
+            // display: none;
+        }
     }
 
     article.articleCheckBox {
@@ -77,6 +92,15 @@ div.checkBox {
     }
 }
 
-article.articleCheckBox, div.checkBox, article.articlePurchase, div.titles, div.counter {
+div.checkBox, div.barSelect {
+    margin: 20px;
+}
+
+div.barSelect {
+    justify-content: space-between;
+    align-items: center;
+}
+
+article.articleCheckBox, div.checkBox, article.articlePurchase, div.titles, div.counter, div.barSelect {
     display: flex;
 }

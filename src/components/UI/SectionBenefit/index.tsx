@@ -17,10 +17,17 @@ type SectionBenefitData = {
 
 export default function SectionBenefit({ children, title, value, counter, action }: SectionBenefitData) {
     return (
-        <SubPanel         
+        <SubPanel
+            selected={false}       
             action={action}
             marginTop={20}
             marginBottom={20}
+            padding={{
+                left: 25,
+                right: 25,
+                top: 25,
+                bottom: 25,
+            }}
         >
             <section 
                 className={styles.sectionBenefit}
@@ -56,7 +63,13 @@ export default function SectionBenefit({ children, title, value, counter, action
                         className={styles.containerSection}
                     >
                         <Counter>{ counter }</Counter>
-                        <Button 
+                        <Button
+                            padding={{
+                                left: 40,
+                                right: 40,
+                                top: 20,
+                                bottom: 20,
+                            }}
                             click={() => {}}    
                             action={action}>
                                 Select Reword
