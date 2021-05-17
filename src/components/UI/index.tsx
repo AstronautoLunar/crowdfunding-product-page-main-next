@@ -14,6 +14,7 @@ import SectionBenefit from './SectionBenefit';
 import TextColor from './TextColor';
 import Counter from './Counter';
 import CheckBox from './CheckBox';
+import ButtonLeave from './ButtonLeave';
 
 export { 
     BackgroundImage, 
@@ -32,4 +33,5 @@ export {
     TextColor,
     Counter,
     CheckBox,
+    ButtonLeave,
 };

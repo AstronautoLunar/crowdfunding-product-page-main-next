@@ -17,6 +17,7 @@ import {
   Title,
   SectionBenefit,
   CheckBox,
+  ButtonLeave,
 } from "../components/UI";
 
 import { useWindow } from '../contexts/WindowContext';
@@ -113,9 +114,12 @@ export default function Home() {
         </Panel>
       </Container>
       <Window action={button}>
+        <ButtonLeave
+          click={toggleButton}
+        />
         <Title
           align="left"
-          type="h4"
+          type="h2"
           marginTop={10}
           marginBottom={10}
         >
