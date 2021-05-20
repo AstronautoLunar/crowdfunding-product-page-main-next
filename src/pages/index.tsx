@@ -41,7 +41,14 @@ export default function Home() {
           <LevelOneTitle marginTop={30} fontSize={23.0}>
             Mastercraft Bamboo Monitor Riser
           </LevelOneTitle>
-          <Text marginTop={15} marginBottom={15} textAlign="center">
+          <Text  
+            margin={{
+              top: 15,
+              bottom: 15,
+              left: 0,
+              right: 0,
+            }}
+            textAlign="center">
             A beautiful & handcrafted monitor stand to reduce neck and eye
             strain.
           </Text>
@@ -84,13 +91,29 @@ export default function Home() {
           >
             About this project
           </Title>
-          <Text textAlign={0} marginTop={20} marginBottom={20}>
+          <Text 
+            textAlign={0} 
+            margin={{
+              top: 20,
+              bottom: 20,
+              left: 0,
+              right: 0,
+            }}
+          >
               The Mastercraft Bamdoo Monitor Rise is a sturdy
               and stylish platform that elevates your screen
               to a more comfortable viewing height. Placing
               your monitor at eye level has the potential to improve your posture and make you more comfortable while at work, helping you stay focused on the task at hand.
           </Text>
-          <Text textAlign={0} marginTop={20} marginBottom={20}>
+          <Text 
+            textAlign={0} 
+            margin={{
+              top: 20,
+              bottom: 20,
+              left: 20,
+              right: 20,
+            }}
+          >
               Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer to allow notepads, pens, and USB sticks to be stored under the stand.
           </Text>
           <SectionBenefit
@@ -133,8 +156,12 @@ export default function Home() {
         </Title>
         <Text
           textAlign="left"
-          marginTop={5}
-          marginBottom={5}
+          margin={{
+            top: 5,
+            bottom: 5,
+            left: 0,
+            right: 0,
+          }}
         >
 
               Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?

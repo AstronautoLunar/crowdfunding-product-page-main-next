@@ -54,8 +54,12 @@ export default function SectionBenefit({ children, title, value, counter, action
                     </div>
                     <Text
                         textAlign="justify"
-                        marginTop={20}
-                        marginBottom={20}
+                        margin={{
+                            top: 20,
+                            bottom: 20,
+                            left: 0,
+                            right: 0,
+                        }}
                     >
                         { children }
                     </Text>

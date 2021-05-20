@@ -42,7 +42,13 @@ export default function CheckBox({
             }}
         >
             <div className={styles.checkBox}
-                onClick={() => toggleSelect()}
+                onClick={
+                    action === true 
+                    ? 
+                    () => toggleSelect()
+                    :
+                    () => {}
+                }
             >
                 <div className={styles.buttonCheck}>
                     <div 
@@ -72,8 +78,12 @@ export default function CheckBox({
                         </div>
                         <Text 
                             textAlign="left"
-                            marginTop={10}
-                            marginBottom={0}
+                            margin={{
+                                top: 10,
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                            }}
                         >
                             { children }
                         </Text>
@@ -85,8 +95,12 @@ export default function CheckBox({
                         <h4 className={styles.titleCheckBox}>Pledge with no reward</h4>
                         <Text 
                             textAlign="left"
-                            marginTop={10}
-                            marginBottom={0}
+                            margin={{
+                                top: 10,
+                                bottom: 0,
+                                right: 0,
+                                left: 0,
+                            }}
                         >
                             Choose to support us without a reward if you simply believe in our project. As a backer you will be signed up to receive product updates via email.
                         </Text>
@@ -101,28 +115,38 @@ export default function CheckBox({
                 <div className={styles.barSelect}>
                     <Text
                         textAlign="left"
-                        marginTop={0}
-                        marginBottom={0}
+                        margin={{
+                            left: 0,
+                            right: 0,
+                            top: 0,
+                            bottom: 0,
+                        }}
                     >Enter your Pledge</Text>
-                    <div>
+                    <div className={styles.containerInput}>
                         <div className={styles.areaInput}>
                             <Text
                                 textAlign="left"
-                                marginTop={0}
-                                marginBottom={0}
+                                margin={{
+                                    left: 0,
+                                    right: 7.5,
+                                    top: 0,
+                                    bottom: 0,
+                                }}
                             >$</Text>
                             <input type="text"/>
                         </div>
-                        <Button
-                            padding={{
-                                left: 20,
-                                right: 20,
-                                top: 15,
-                                bottom: 15,
-                            }}
-                            action={true}
-                            click={() => {}}
-                        >Continue</Button>
+                        <div className={styles.areaButton}>
+                            <Button
+                                padding={{
+                                    left: 20,
+                                    right: 20,
+                                    top: 15,
+                                    bottom: 15,
+                                }}
+                                action={true}
+                                click={() => {}}
+                            >Continue</Button>
+                        </div>
                     </div>
                 </div>
                 </>

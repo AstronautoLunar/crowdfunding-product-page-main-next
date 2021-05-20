@@ -92,6 +92,39 @@ div.checkBox {
     }
 }
 
+div.barSelect {
+
+    div.containerInput {
+        width: 400px;
+
+        align-items: center;
+        justify-content: flex-end;
+
+        div.areaInput {
+            align-items: center;
+            justify-content: center;
+            
+            border-radius: 25px;
+            border: 1px solid var(--primary-moderate-cyan);
+
+            padding: 10px 20px;
+
+            margin-right: 15px;
+
+            input {
+                width: 30px;
+
+                font-weight: 700;
+
+                border: none;
+                outline: none;
+                box-shadow: none;
+            }
+
+        }
+    }
+}
+
 div.checkBox, div.barSelect {
     margin: 20px;
 }
@@ -101,6 +134,13 @@ div.barSelect {
     align-items: center;
 }
 
-article.articleCheckBox, div.checkBox, article.articlePurchase, div.titles, div.counter, div.barSelect {
+article.articleCheckBox, 
+div.checkBox, 
+article.articlePurchase, 
+div.titles, 
+div.counter, 
+div.barSelect, 
+div.containerInput, 
+div.areaInput {
     display: flex;
 }
