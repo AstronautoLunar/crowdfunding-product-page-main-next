@@ -30,6 +30,7 @@ export default function Home() {
     toggleButton, 
     purchase,
     togglePurchase,
+    valuePurchase,
 } = useWindow();
 
   return (
@@ -116,8 +117,8 @@ export default function Home() {
             margin={{
               top: 20,
               bottom: 20,
-              left: 20,
-              right: 20,
+              left: 0,
+              right: 0,
             }}
           >
               Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer to allow notepads, pens, and USB sticks to be stored under the stand.
@@ -149,6 +150,8 @@ export default function Home() {
         </Panel>
       </Container>
       <Window 
+        width={650}
+        alignItems="flex-start"
         action={button}
         click={toggleButton}
       >
@@ -214,16 +217,41 @@ export default function Home() {
           </CheckBox>
       </Window>
       <Window 
-      action={purchase}
-      click={togglePurchase}
+        width={400}
+        alignItems="center"
+        action={valuePurchase > 0 && purchase}
+        click={togglePurchase}
       >
-          <h1>Olá mundo</h1>
+          <img 
+            className={styles.imgCheck}
+            src="/icon-check.svg"
+            alt="icon check"
+          />
+          <Title
+            type="h3"
+            align="center"
+            marginTop={10}
+            marginBottom={10}
+          >
+            Thanks for your support!
+          </Title>
+          <Text
+            textAlign="center"
+            margin={{
+              top: 10,
+              bottom: 30,
+              left: 10,
+              right: 10,
+            }}
+          >
+            Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed.
+          </Text>
           <Button
             padding={{
-              top: 5,
-              bottom: 5,
-              left: 5,
-              right: 5,
+              top: 11,
+              bottom: 11,
+              left: 25,
+              right: 25,
             }}
             action={purchase}
             click={togglePurchase}
@@ -232,8 +260,3 @@ export default function Home() {
     </main>
   );
 }
-
-//  
-// 25 prace
-// 101 counter
-// 

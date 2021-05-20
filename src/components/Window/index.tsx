@@ -5,10 +5,12 @@ import styles from './styles.module.scss';
 type WindowData = {
     children: any;
     action: boolean;
+    alignItems: string;
+    width: number,
     click: () => void;
 }
 
-export default function Window({ children, action, click }: WindowData) {
+export default function Window({ children, action, click, alignItems, width }: WindowData) {
     let styleDisplay = "none";
     if(action === true) {
         styleDisplay = "flex";
@@ -29,7 +31,11 @@ export default function Window({ children, action, click }: WindowData) {
             >
             </div>
             <div 
-                style={{display: styleDisplay}}
+                style={{
+                    display: styleDisplay,
+                    alignItems,
+                    width
+                }}
                 className={styles.window}
                 >
                 { children }

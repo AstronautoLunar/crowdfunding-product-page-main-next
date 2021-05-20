@@ -16,7 +16,7 @@ export default function CheckBox({
     children, 
     action 
 }) {
-    let { togglePurchase } = useWindow();
+    let { togglePurchase, valuePurchase, purchaseObject } = useWindow();
 
     let [ select, setSelect ] = useState(false);
 
@@ -137,7 +137,11 @@ export default function CheckBox({
                                     bottom: 0,
                                 }}
                             >$</Text>
-                            <input type="text"/>
+                            <input 
+                                type="text"
+                                value={valuePurchase}
+                                onChange={e => purchaseObject(e)}
+                            />
                         </div>
                         <div className={styles.areaButton}>
                             <Button
