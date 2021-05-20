@@ -33,6 +33,8 @@ export default function Home() {
     valuePurchase,
 } = useWindow();
 
+// tela é funcional até a largura atingir o minimo de 1078px
+
   return (
     <main id={styles.main} role="main">
       <BackgroundImage>

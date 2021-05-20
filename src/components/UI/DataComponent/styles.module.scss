@@ -1,10 +1,11 @@
 div.dataComponent {
-    margin-right: 50px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+
+    flex: 1;
 
     h1 {
         font-size: 30px;

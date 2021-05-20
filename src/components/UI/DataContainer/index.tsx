@@ -13,19 +13,16 @@ export default function DataContainer() {
                 <DataComponent
                     strongText="$89,914"
                     weakText="of $100.000 backed"
-                    marginRight={0}
                 />
                 <Separate/>
                 <DataComponent
                     strongText="$5.007"
                     weakText="total backers"
-                    marginRight={40}
                 />
                 <Separate/>
                 <DataComponent
                     strongText="56"
                     weakText="days left"
-                    marginRight={0}
                 />
             </div>
             <div id={styles.barData}>

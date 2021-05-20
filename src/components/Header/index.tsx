@@ -1,4 +1,4 @@
-import { LinkHeader } from '../UI';
+import { Nav } from '../UI';
 
 import styles from './styles.module.scss';
 
@@ -16,9 +16,9 @@ export default function Header() {
                 {
                     linksString.map(item => {
                         return (
-                            <LinkHeader key={item.id}>
+                            <Nav key={item.id}>
                                 {item.name}
-                            </LinkHeader>
+                            </Nav>
                         )
                     })
                 }

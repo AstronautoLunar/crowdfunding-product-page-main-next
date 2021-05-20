@@ -6,3 +6,12 @@ div.separate {
 
     background-color: hsl(0, 0%, 80%);
 }
+
+@media screen and (max-width: 1078px) {
+    div.separate {
+        width: 60px;
+        height: 1px;
+
+        margin: 20px 0;
+    }
+}

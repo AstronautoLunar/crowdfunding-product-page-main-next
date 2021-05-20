@@ -25,6 +25,12 @@ button.buttonIcon {
             }
         }
     }
+
+    @media screen and (max-width: 1078px) {
+        div.areaTextButtonIcon {
+            display: none;
+        }
+    }
 }
 
 

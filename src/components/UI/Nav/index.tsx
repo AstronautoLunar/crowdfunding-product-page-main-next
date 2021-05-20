@@ -1,10 +1,10 @@
 import styles from './styles.module.scss';
 
-type LinkData = {
+type NavData = {
     children: string;
 }
 
-export default function LinkHeader({ children }: LinkData) {
+export default function Nav({ children }: NavData) {
     return (
         <div id={styles.link}>
             <span id={styles.linkText}>{children}</span>

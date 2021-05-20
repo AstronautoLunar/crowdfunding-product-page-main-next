@@ -1,5 +1,5 @@
 import BackgroundImage from './BackgroundImage';
-import LinkHeader from './LinkHeader';
+import Nav from './Nav';
 import Panel from './Panel';
 import IconLogo from './IconLogo';
 import LevelOneTitle from './LevelOneTitle';
@@ -18,7 +18,7 @@ import ButtonLeave from './ButtonLeave';
 
 export { 
     BackgroundImage, 
-    LinkHeader, 
+    Nav, 
     Panel, 
     IconLogo, 
     LevelOneTitle, 
