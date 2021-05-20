@@ -4,6 +4,8 @@ import Button from '../Button';
 
 import { useState } from 'react';
 
+import { useWindow } from '../../../contexts/WindowContext';
+
 import styles from './styles.module.scss';
 
 export default function CheckBox({ 
@@ -14,6 +16,8 @@ export default function CheckBox({
     children, 
     action 
 }) {
+    let { togglePurchase } = useWindow();
+
     let [ select, setSelect ] = useState(false);
 
     function toggleSelect() {
@@ -144,7 +148,7 @@ export default function CheckBox({
                                     bottom: 15,
                                 }}
                                 action={true}
-                                click={() => {}}
+                                click={togglePurchase}
                             >Continue</Button>
                         </div>
                     </div>

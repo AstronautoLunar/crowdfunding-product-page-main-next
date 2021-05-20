@@ -5,9 +5,10 @@ import styles from './styles.module.scss';
 type WindowData = {
     children: any;
     action: boolean;
+    click: () => void;
 }
 
-export default function Window({ children, action }: WindowData) {
+export default function Window({ children, action, click }: WindowData) {
     let styleDisplay = "none";
     if(action === true) {
         styleDisplay = "flex";
@@ -15,19 +16,21 @@ export default function Window({ children, action }: WindowData) {
         styleDisplay = "none";
     }
 
-    let { toggleButton } = useWindow();
+    // if(typeWindow === "")
+
+    // let { toggleButton } = useWindow();
 
     return (
         <>
             <div 
-                id={styles.brightness}
+                className={styles.brightness}
                 style={{display: styleDisplay}}
-                onClick={() => toggleButton()}    
+                onClick={() => click()}    
             >
             </div>
             <div 
                 style={{display: styleDisplay}}
-                id={styles.window}
+                className={styles.window}
                 >
                 { children }
             </div>

@@ -1,4 +1,4 @@
-div#brightness {
+div.brightness {
     width: 100%;
     height: 3100px;
 
@@ -11,7 +11,7 @@ div#brightness {
     top: 50%;
 }
 
-div#window {
+div.window {
     padding: 30px;
 
     width: 650px;
@@ -28,7 +28,7 @@ div#window {
     align-items: left;
 }
 
-div#brightness, div#window {
+div.brightness, div.window {
     display: flex;
     justify-content: center;
     left: 50%;

@@ -25,7 +25,13 @@ import { useWindow } from '../contexts/WindowContext';
 import styles from "../styles/Home.module.scss";
 
 export default function Home() {
-  let { button, toggleButton } = useWindow();
+  let { 
+    button, 
+    toggleButton, 
+    purchase,
+    togglePurchase,
+} = useWindow();
+
   return (
     <main id={styles.main} role="main">
       <BackgroundImage>
@@ -142,7 +148,10 @@ export default function Home() {
           </SectionBenefit>
         </Panel>
       </Container>
-      <Window action={button}>
+      <Window 
+        action={button}
+        click={toggleButton}
+      >
         <ButtonLeave
           click={toggleButton}
         />
@@ -203,7 +212,22 @@ export default function Home() {
           >
             You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You'all be added to our Backer member list. Shipping is included.
           </CheckBox>
-          
+      </Window>
+      <Window 
+      action={purchase}
+      click={togglePurchase}
+      >
+          <h1>Olá mundo</h1>
+          <Button
+            padding={{
+              top: 5,
+              bottom: 5,
+              left: 5,
+              right: 5,
+            }}
+            action={purchase}
+            click={togglePurchase}
+          >Got it!</Button>
       </Window>
     </main>
   );
