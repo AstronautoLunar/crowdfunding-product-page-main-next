@@ -12,3 +12,9 @@ div#panel {
 
     box-shadow: 0 0 0.8px 0.4px rgba(20, 20, 20, 0.1)
 }
+
+@media screen and (max-width: 530px) {
+    div#panel {
+        width: 60vw;
+    }
+}

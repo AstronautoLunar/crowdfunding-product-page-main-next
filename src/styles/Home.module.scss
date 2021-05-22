@@ -5,3 +5,26 @@ main#main {
 img.imgCheck {
     margin-bottom: 20px;
 }
+
+a.linkNavOn, a.linkNavOff {
+    color: #000000;
+
+    text-decoration: none;
+
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 1s;
+}
+
+a.linkNavOn {
+    display: flex;
+    
+}
+
+a.linkNavOff {
+   display: none; 
+}

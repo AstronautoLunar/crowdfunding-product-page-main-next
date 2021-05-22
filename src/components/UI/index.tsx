@@ -15,6 +15,7 @@ import TextColor from './TextColor';
 import Counter from './Counter';
 import CheckBox from './CheckBox';
 import ButtonLeave from './ButtonLeave';
+import NavBar from './NavBar';
 
 export { 
     BackgroundImage, 
@@ -34,4 +35,5 @@ export {
     Counter,
     CheckBox,
     ButtonLeave,
+    NavBar,
 };

@@ -10,9 +10,16 @@ type ButtonData = {
         top: number;
         bottom: number;
     }
+    fontSize: number;
 }
 
-export default function Button({ children, action, click, padding }: ButtonData) {
+export default function Button({ 
+    children, 
+    action, 
+    click, 
+    padding, 
+    fontSize,
+}: ButtonData) {
     return (
         <button
             style={{
@@ -30,7 +37,12 @@ export default function Button({ children, action, click, padding }: ButtonData)
             ]}
             onClick={() => click()}
         >
-            <span className={styles.buttonText}>{ children }</span>
+            <span 
+                className={styles.buttonText}
+                style={{
+                    fontSize,
+                }}
+            >{ children }</span>
         </button>
     );
 }

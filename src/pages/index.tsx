@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 import { 
   Header, 
   Container,
@@ -18,29 +20,89 @@ import {
   SectionBenefit,
   CheckBox,
   ButtonLeave,
+  NavBar
 } from "../components/UI";
 
 import { useWindow } from '../contexts/WindowContext';
+import { useNav } from '../contexts/NavContext';
 
 import styles from "../styles/Home.module.scss";
 
+const linksString = [
+  { name: 'About', id: 0 },
+  { name: 'Discover', id: 1 },
+  { name: 'Get Started', id: 2 },
+];
+
 export default function Home() {
+  let [ buttonSmall, setButtonSmall ] = useState(14);
+  let [ paddingButton, setPaddingButton ] = useState(40);
+
+  useEffect(() => {
+    const mediaQuerieList = matchMedia("(max-width: 400px)");
+
+    function decreaseButton(mediaQuerieList) {
+      if(mediaQuerieList.matches) {
+        setButtonSmall(buttonSmall = 10);
+        setPaddingButton(paddingButton = 20);
+      } else {
+        setButtonSmall(buttonSmall = 14);
+        setPaddingButton(paddingButton = 40);
+      }
+    }
+
+    decreaseButton(mediaQuerieList);
+
+    mediaQuerieList.addListener(decreaseButton);
+
+  }, [ 
+      buttonSmall, 
+      setButtonSmall, 
+      paddingButton, 
+      setPaddingButton 
+    ])
+  
   let { 
     button, 
     toggleButton, 
     purchase,
     togglePurchase,
     valuePurchase,
-} = useWindow();
+  } = useWindow();
 
-// tela é funcional até a largura atingir o minimo de 1078px
+  let {
+    navOpen,
+  } = useNav()
 
+  
   return (
     <main id={styles.main} role="main">
       <BackgroundImage>
         <Header />
+        <NavBar 
+          open={navOpen}
+          finalHeight={115}
+        >
+          {
+            linksString.map(item => 
+              <a 
+                href="" 
+                key={item.id}
+                className={styles[
+                  navOpen
+                  ?
+                  "linkNavOn"
+                  :
+                  "linkNavOff"
+                ]}
+              >{item.name}</a>)
+          }
+        </NavBar>
       </BackgroundImage>
-      <Container>
+      <Container
+        openForNav={navOpen}
+        finalTop="70%"
+      >
         <Panel>
           <IconLogo
             src="/logo-mastercraft.svg"
@@ -64,11 +126,12 @@ export default function Home() {
           <SubContainer>
             <Button
               padding={{
-                left: 40,
-                right: 40,
+                left: paddingButton,
+                right: paddingButton,
                 top: 20,
                 bottom: 20,
               }}
+              fontSize={buttonSmall}
               action={true}
               click={toggleButton}
             >
@@ -255,6 +318,7 @@ export default function Home() {
               left: 25,
               right: 25,
             }}
+            fontSize={14}
             action={purchase}
             click={togglePurchase}
           >Got it!</Button>

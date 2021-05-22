@@ -1,12 +1,15 @@
 import { WindowProvider } from '../contexts/WindowContext';
+import { NavProvider } from '../contexts/NavContext';
 
 import "../styles/globals.scss";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <WindowProvider>
-      <Component {...pageProps}/>
-    </WindowProvider>
+    <NavProvider>
+      <WindowProvider>
+        <Component {...pageProps}/>
+      </WindowProvider>
+    </NavProvider>
   )
   
 }
