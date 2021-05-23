@@ -2,7 +2,7 @@ import SubPanel from '../SubPanel';
 import Text from '../Text';
 import Button from '../Button';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { useWindow } from '../../../contexts/WindowContext';
 
@@ -16,9 +16,25 @@ export default function CheckBox({
     children, 
     action 
 }) {
-    let { togglePurchase, valuePurchase, purchaseObject } = useWindow();
-
+    let { 
+        togglePurchase, 
+        valuePurchase, 
+        purchaseObject 
+    } = useWindow();
     let [ select, setSelect ] = useState(false);
+    let [ replacementCounter, setReplacementCounter ] = useState(false);
+    let [ 
+        changeMarginLeftText,
+        setChangeMarginLeftText 
+    ] = useState(57)
+    let [ 
+        changeMarginBottomText, 
+        setChangeMarginBottomText 
+    ] = useState(0);
+    let [ 
+        changeMarginBottomSelect, 
+        setChangeMarginBottomSelect
+    ] = useState(0);
 
     function toggleSelect() {
         setSelect(select = !select);
@@ -31,6 +47,50 @@ export default function CheckBox({
     } else {
         displayStyle = 'none';
     }
+
+    useEffect(() => {
+        const mediaQuerieList1 = matchMedia("(max-width: 700px");
+
+        function setResponsive1(mediaQuerieList) {
+            if(mediaQuerieList.matches) {
+                setReplacementCounter(replacementCounter = true);
+                setChangeMarginLeftText(changeMarginLeftText = 0);
+                setChangeMarginBottomText(changeMarginBottomText = 20);
+            } else {
+                setReplacementCounter(replacementCounter = false);
+                setChangeMarginLeftText(changeMarginLeftText = 57);
+                setChangeMarginBottomText(changeMarginBottomText = 0);
+            }
+        }
+
+        setResponsive1(mediaQuerieList1);
+
+        mediaQuerieList1.addListener(setResponsive1);
+
+        const mediaQuerieList2 = matchMedia("(max-width: 500px)");
+
+        function setResponsive2(mediaQuerieList) {
+            if(mediaQuerieList.matches) {
+                setChangeMarginBottomSelect(changeMarginBottomSelect = 15);
+            } else {
+                setChangeMarginBottomSelect(changeMarginBottomSelect = 0);
+            }
+        }
+
+        setResponsive2(mediaQuerieList2);
+
+        mediaQuerieList2.addListener(setResponsive2);
+    }
+    , [ 
+        replacementCounter,
+        setReplacementCounter, 
+        changeMarginLeftText,
+        setChangeMarginLeftText,
+        changeMarginBottomText,
+        setChangeMarginBottomText,
+        changeMarginBottomSelect, 
+        setChangeMarginBottomSelect
+    ])
 
     return (
         <SubPanel
@@ -54,56 +114,90 @@ export default function CheckBox({
                     () => {}
                 }
             >
-                <div className={styles.buttonCheck}>
-                    <div 
-                        className={styles.selected}
-                        style={{display: displayStyle}}
-                    >
-
-                    </div>
-                </div>
                 {
                     type === "purchase"
                     &&
-                    <article className={styles.articlePurchase}>
-                        <div className={styles.titles}>
-                            <h4 className={styles.titleCheckBox}>
-                                { title }
-                            </h4>
-                            <h4 className={styles.price}>
-                                Pledge ${ prace } or more
-                            </h4>
-                            <div className={styles.counter}>
-                                <span className={styles.stronger}>{ counter }</span>
-                                <span className={styles.weak}>
-                                    left
-                                </span>
+                    <article 
+                        className={styles.articlePurchase}
+                    >
+                        <div 
+                        className={styles.titles}
+                        >
+                            <div 
+                                className={styles.buttonCheck}
+                            >
+                                <div 
+                                    className={styles.selected}
+                                    style={{display: displayStyle}}
+                                >
+                                </div>
                             </div>
+                            <div 
+                                className={styles.titleAndPrice}
+                            >
+                                <h4 className={styles.titleCheckBox}>
+                                    { title }
+                                </h4>
+                                <h4 className={styles.price}>
+                                    Pledge ${ prace } or more
+                                </h4>
+                            </div>
+                            {
+                                replacementCounter
+                                ||
+                                <div className={styles.counterHidden}>
+                                    <span className={styles.stronger}>{ counter }</span>
+                                    <span className={styles.weak}>
+                                        left
+                                    </span>
+                                </div>
+                            }
                         </div>
                         <Text 
-                            textAlign="left"
+                            textAlign="justify"
                             margin={{
                                 top: 10,
-                                bottom: 0,
-                                left: 0,
+                                bottom: changeMarginBottomText,
+                                left: changeMarginLeftText,
                                 right: 0,
                             }}
                         >
                             { children }
                         </Text>
+                        {
+                            replacementCounter
+                            &&
+                            <div className={styles.counterVisible}>
+                                <span className={styles.stronger}>{ counter }</span>
+                                <span className={styles.weak}>
+                                    left
+                                </span>
+                            </div>
+                        }
                     </article>
                     ||
                     type === "checkBox"
                     &&
                     <article className={styles.articleCheckBox}>
-                        <h4 className={styles.titleCheckBox}>Pledge with no reward</h4>
+                        <div 
+                        className={styles.titles}
+                            >
+                            <div className={styles.buttonCheck}>
+                                <div 
+                                    className={styles.selected}
+                                    style={{display: displayStyle}}
+                                >
+                                </div>
+                            </div>
+                            <h4 className={styles.titleCheckBox}>Pledge with no reward</h4>
+                        </div>
                         <Text 
-                            textAlign="left"
+                            textAlign="justify"
                             margin={{
                                 top: 10,
                                 bottom: 0,
+                                left: changeMarginLeftText,
                                 right: 0,
-                                left: 0,
                             }}
                         >
                             Choose to support us without a reward if you simply believe in our project. As a backer you will be signed up to receive product updates via email.
@@ -123,7 +217,7 @@ export default function CheckBox({
                             left: 0,
                             right: 0,
                             top: 0,
-                            bottom: 0,
+                            bottom: changeMarginBottomSelect,
                         }}
                     >Enter your Pledge</Text>
                     <div className={styles.containerInput}>
@@ -145,6 +239,7 @@ export default function CheckBox({
                         </div>
                         <div className={styles.areaButton}>
                             <Button
+                                fontSize={14}
                                 padding={{
                                     left: 20,
                                     right: 20,

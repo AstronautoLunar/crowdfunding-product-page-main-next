@@ -43,7 +43,7 @@ export default function SectionBenefit({ children, title, value, counter, action
                         <Title
                             align="left"
                             marginTop={0}
-                            marginBottom={0}
+                            marginBottom={10}
                             type="h4"
                         >
                             { title }
@@ -66,8 +66,11 @@ export default function SectionBenefit({ children, title, value, counter, action
                     <div 
                         className={styles.containerSection}
                     >
-                        <Counter>{ counter }</Counter>
+                        <Counter>
+                            { counter }
+                        </Counter>
                         <Button
+                            fontSize={14}
                             padding={{
                                 left: 40,
                                 right: 40,

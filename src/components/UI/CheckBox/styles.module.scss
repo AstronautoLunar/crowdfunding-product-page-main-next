@@ -3,6 +3,8 @@ div.checkBox {
     align-items: flex-start;
 
     cursor: pointer;
+
+    position: relative;
     
     div.buttonCheck {
         width: 25px;
@@ -45,58 +47,87 @@ div.checkBox {
         
         div.titles {
             font-size: 15px;
-
-            height: 25px;
-
-            align-items: center;
             
-            h4.titleCheckBox:hover {
-                color: var(--primary-moderate-cyan);
+            div.titleAndPrice {
+
+                
+                h4.titleCheckBox:hover {
+                    color: var(--primary-moderate-cyan);
+                }
+
+                h4.price {
+                    margin-left: 20px;
+                    
+                    color: var(--primary-moderate-cyan);
+                }
             }
 
-            h4.price {
-                margin-left: 20px;
-                
-                color: var(--primary-moderate-cyan);
+            @media screen and (max-width: 700px) {
+                div.titleAndPrice {
+                    flex-direction: column;
+
+                    h4.titleCheckBox {
+                        margin-bottom: 7.5px;
+                    }
+
+                    h4.price {
+                        margin-left: 0;
+                    }
+                }
             }
 
             position: relative;
+        }
 
-            div.counter {
-                justify-content: center;
-                align-items: center;
-
-                position: absolute;
-                right: 0;
-
-                span.stronger {
-                    color: #000000;
-
-                    font-size: 20px;
-                    font-weight: 700;
-
-                    margin-right: 5px;
-                }
-
-                span.weak {
-                    color: var(--neutral-dark-gray);
-                
-                }
+        @media screen and (max-width: 700px) {
+            div.titles {
+                margin-bottom: 10px;
             }
         }
     }
 
     article.articleCheckBox, article.articlePurchase {
         flex-direction: column;
-        width: 86%;
+        flex: 1;
     }
+
+    div.counterHidden, div.counterVisible {
+        justify-content: center;
+        align-items: center;
+    
+        span.stronger {
+            color: #000000;
+    
+            font-size: 20px;
+            font-weight: 700;
+    
+            margin-right: 5px;
+        }
+    
+        span.weak {
+            color: var(--neutral-dark-gray);
+        
+        }
+    }
+
+    div.counterVisible {
+        position: relative;
+        
+    }
+
+    div.counterHidden {
+        position: absolute;
+        right: 0;
+    }
+}
+
+div.titles {
+    align-items: center;
 }
 
 div.barSelect {
 
     div.containerInput {
-        width: 400px;
-
         align-items: center;
         justify-content: flex-end;
 
@@ -125,6 +156,14 @@ div.barSelect {
     }
 }
 
+@media screen and (max-width: 500px) {
+    div.barSelect {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
 div.checkBox, div.barSelect {
     margin: 20px;
 }
@@ -141,6 +180,8 @@ div.titles,
 div.counter, 
 div.barSelect, 
 div.containerInput, 
-div.areaInput {
+div.areaInput,
+div.titleAndPrice
+{
     display: flex;
 }

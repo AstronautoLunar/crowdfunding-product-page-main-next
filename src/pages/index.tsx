@@ -37,9 +37,11 @@ const linksString = [
 export default function Home() {
   let [ buttonSmall, setButtonSmall ] = useState(14);
   let [ paddingButton, setPaddingButton ] = useState(40);
+  let [ changeLeftWindow1, setChangeLeftWindow1 ] = useState("50%");
+  let [ changeLeftWindow2, setChangeLeftWindow2 ] = useState("50%");
 
   useEffect(() => {
-    const mediaQuerieList = matchMedia("(max-width: 400px)");
+    const mediaQuerieList1 = matchMedia("(max-width: 400px)");
 
     function decreaseButton(mediaQuerieList) {
       if(mediaQuerieList.matches) {
@@ -51,15 +53,44 @@ export default function Home() {
       }
     }
 
-    decreaseButton(mediaQuerieList);
+    decreaseButton(mediaQuerieList1);
 
-    mediaQuerieList.addListener(decreaseButton);
+    mediaQuerieList1.addListener(decreaseButton);
 
+    const mediaQuerieList2 = matchMedia("(max-width: 700px)");
+
+    function changeLeft1(mediaQuerieList) {
+      if(mediaQuerieList.matches) {
+        setChangeLeftWindow1(changeLeftWindow1 = "46.5%");
+      } else {
+        setChangeLeftWindow1(changeLeftWindow1 = "50%");
+      }
+    }
+
+    changeLeft1(mediaQuerieList2);
+
+    mediaQuerieList2.addListener(changeLeft1);
+
+    function changeLeft2(mediaQuerieList) {
+      if(mediaQuerieList.matches) {
+        setChangeLeftWindow2(changeLeftWindow2 = "46%");
+      } else {
+        setChangeLeftWindow2(changeLeftWindow2 = "50%");
+      }
+    }
+
+    changeLeft2(mediaQuerieList2);
+
+    mediaQuerieList2.addListener(changeLeft2);
   }, [ 
       buttonSmall, 
       setButtonSmall, 
       paddingButton, 
-      setPaddingButton 
+      setPaddingButton, 
+      changeLeftWindow1, 
+      setChangeLeftWindow1,
+      changeLeftWindow2, 
+      setChangeLeftWindow2
     ])
   
   let { 
@@ -215,7 +246,7 @@ export default function Home() {
         </Panel>
       </Container>
       <Window 
-        width={650}
+        left={changeLeftWindow1}
         alignItems="flex-start"
         action={button}
         click={toggleButton}
@@ -282,9 +313,9 @@ export default function Home() {
           </CheckBox>
       </Window>
       <Window 
-        width={400}
+        left={changeLeftWindow2}
         alignItems="center"
-        action={valuePurchase > 0 && purchase}
+        action={purchase}
         click={togglePurchase}
       >
           <img 
@@ -305,8 +336,8 @@ export default function Home() {
             margin={{
               top: 10,
               bottom: 30,
-              left: 10,
-              right: 10,
+              left: 0,
+              right: 0,
             }}
           >
             Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed.

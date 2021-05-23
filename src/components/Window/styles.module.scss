@@ -13,8 +13,7 @@ div.brightness {
 
 div.window {
     padding: 30px;
-
-    // width: 650px;
+    margin: 0 20px;
     
     flex-direction: column;
     
@@ -24,12 +23,12 @@ div.window {
 
     position: relative;
     top: 200px;
-
 }
+
 
 div.brightness, div.window {
     display: flex;
-    justify-content: center;
     left: 50%;
+    justify-content: center;
     transform: translate(-50%, -50%);
 }

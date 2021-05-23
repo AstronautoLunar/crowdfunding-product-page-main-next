@@ -1,16 +1,24 @@
-import { useWindow } from '../../contexts/WindowContext';
+import { useEffect, useState } from 'react';
 
 import styles from './styles.module.scss';
 
 type WindowData = {
     children: any;
     action: boolean;
-    alignItems: string;
-    width: number,
     click: () => void;
+    alignItems: string;
+    left: string | number
 }
 
-export default function Window({ children, action, click, alignItems, width }: WindowData) {
+export default function Window({ 
+    children, 
+    action, 
+    click, 
+    alignItems, 
+    left,
+}: WindowData) {
+    let [ width, setWidth ] = useState("")
+
     let styleDisplay = "none";
     if(action === true) {
         styleDisplay = "flex";
@@ -18,9 +26,21 @@ export default function Window({ children, action, click, alignItems, width }: W
         styleDisplay = "none";
     }
 
-    // if(typeWindow === "")
+    useEffect(() => {
+        const mediaQuerieList = matchMedia("(max-width: 700px)");
 
-    // let { toggleButton } = useWindow();
+        function changeWidthResponsive(mediaQuerieList) {
+            if(mediaQuerieList.matches) {
+                setWidth(width = "auto");
+            } else {
+                setWidth(width = "600px");
+            }
+        }
+
+        changeWidthResponsive(mediaQuerieList);
+
+        mediaQuerieList.addListener(changeWidthResponsive);
+    }, [ width, setWidth ])
 
     return (
         <>
@@ -34,7 +54,8 @@ export default function Window({ children, action, click, alignItems, width }: W
                 style={{
                     display: styleDisplay,
                     alignItems,
-                    width
+                    width,
+                    left
                 }}
                 className={styles.window}
                 >
