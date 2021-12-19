@@ -2,6 +2,13 @@
 
 <p align="center">Desafio concluido da plataforma front end mentor</p>
 
+<div align="center">
+    <img
+        src="https://github.com/Pyedrown/crowdfunding-product-page-main-next/blob/main/presentation.PNG"
+        alt="presentation image"
+    />
+</div>
+
 <h1 align="center">
     <a href="https://nextjs.org//">🔗 Next</a>
 </h1>
